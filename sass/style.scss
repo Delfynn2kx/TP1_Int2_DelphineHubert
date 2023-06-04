@@ -1,0 +1,122 @@
+/**  VARIABLES **/
+$vertsauge: #a2a76c;
+$gris: #666570;
+$coul-bg: white;
+$color-header: #e5e5e5;
+
+/** GENERAL **/
+
+* {box-sizing: border-box;}
+
+img{ max-width: 100%;}
+
+.container{
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 5%;
+  margin: 0 auto;
+  /* Clearfix hack */
+  &:after{
+    clear: both;
+    content: " ";
+    display: block;
+  }
+}
+
+ul.menu{
+  list-style: none;
+  padding: 0;
+}
+
+section{ padding: 2rem 0; }
+
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  color: $vertsauge;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: $coul-bg;
+}
+
+a{
+  text-decoration: none;
+  color: $vertsauge;
+  transition: all 0.3s;
+  &:hover{
+    color: $gris;
+  }
+}
+
+/** HEADER **/
+
+.logo{
+  float: left;
+  width: 100%;
+  max-width: 180px;
+  padding: 1rem 0;
+  transition: all 0.2s;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+header{ background-color: $color-header; }
+
+/** NAVIGATION **/
+
+nav{float: right;}
+
+.menu-item{
+  float: left;
+  margin-right: 0.5em;
+  position: relative;
+}
+
+.menu-item a{
+  display: block;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.menu-item a:hover{
+  color: $coul-bg;
+}
+
+.menu-item.current-item a{
+  color: $gris;
+  border-bottom: 3px solid $gris;
+}
+
+
+/** FOOTER **/
+
+footer{
+  background-color: $gris;
+  padding: 2rem 0;
+}
+
+footer .menu-item a{
+  text-transform: inherit;
+}
+
+footer .menu-item.current-item a{
+  color: $coul-bg;
+  border-color: $coul-bg;
+}
+
+footer .logo{
+  padding: 0.5em 1em;
+  max-width: 125px;
+}
+
+footer p{
+  font-size: 1.2rem;
+  color: #d283aa;
+  clear: both;
+  text-align: center;
+}

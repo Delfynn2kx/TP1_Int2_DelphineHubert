@@ -2,7 +2,7 @@
 $vertsauge: #a2a76c;
 $gris: #666570;
 $coul-bg: white;
-$color-header: #e5e5e5;
+$color-header: #e5e5e5; 
 
 /** GENERAL **/
 
@@ -11,8 +11,7 @@ $color-header: #e5e5e5;
 img{ max-width: 100%;}
 
 .container{
-  width: 100%;
-  max-width: 1080px;
+  width: 80%;
   padding: 0 5%;
   margin: 0 auto;
   /* Clearfix hack */
@@ -22,14 +21,6 @@ img{ max-width: 100%;}
     display: block;
   }
 }
-
-ul.menu{
-  list-style: none;
-  padding: 0;
-}
-
-section{ padding: 2rem 0; }
-
 
 html{
   font-size: 62.5%;
@@ -45,11 +36,23 @@ body{
 a{
   text-decoration: none;
   color: $vertsauge;
-  transition: all 0.3s;
-  &:hover{
-    color: $gris;
-  }
 }
+
+hr{
+  width: 80%;
+  border: 1px solid $vertsauge;
+}
+
+#apropos, #home-staging, #temoignages, .contentreal {
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+h1, h2{
+  text-align: center;
+}
+
 
 /** HEADER **/
 
@@ -66,30 +69,149 @@ a{
 
 header{ background-color: $color-header; }
 
+section{  margin: 0 auto; }
+
 /** NAVIGATION **/
 
-nav{float: right;}
 
-.menu-item{
-  float: left;
+
+.main-nav{
+  float: right;
   margin-right: 0.5em;
+  padding-top:4.5em;
+  position: relative;
+  list-style: none;
+
+  &__item{
+    display: inline-block;
+    }
+  
+  &__link{
+   padding: 0.5em 1em;
+   font-size: 1.3rem;
+   text-transform: uppercase;
+   font-weight: bold;
+
+   &:hover{
+    color: $gris;
+    font-weight: bold;
+    }
+  }
+}
+
+/** BANNIERE **/
+
+.banniere{
+  background-color: $gris;
+
+  &__slider{
+    background-image: url(../images/banniere-unsplash.jpg);
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: 400px;
+    display: block;
+    text-indent: -33333px;
+    background-size: cover;
+  }
+  &__infolettre{
+    color:$coul-bg;
+    text-align: center;
+  }
+  }
+
+
+  /** À PROPOS **/
+#apropos{
+  margin-bottom: 50px;
+}
+.content{  
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &__servicesChild{
+        background-color: $gris;
+        width: 30%; 
+        color: $coul-bg;
+        text-align: center;
+        padding: 20px;        
+        }
+    &__serviceImg{
+        background-color: $gris;
+        border-radius: 100px;
+        width: 50%;
+        }
+    }
+
+  /** RÉALISATION **/
+  #realisations{
+    background-color: $vertsauge;
+    }
+
+.contentreal{
+      padding:10px 0px 50px 0px;
+    }
+
+    
+  .contentreal h1{
+    color: $coul-bg;
+
+  }
+
+  .gallerie {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    grid-template-rows: repeat(4, 150px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-auto-flow: row;
+    grid-auto-rows: minmax(150px, auto);
+    }
+    
+    .div1 { grid-area: 2 / 1 / 4 / 2; background-color: chocolate; }
+    .div2 { grid-area: 1 / 2 / 3 / 4; background-color: blueviolet;}
+    .div3 { grid-area: 2 / 4 / 3 / 5; background-color: cornflowerblue;}
+    .div4 { grid-area: 3 / 2 / 4 / 3; background-color: darkred;}
+    .div5 { grid-area: 3 / 3 / 5 / 5; background-color: darksalmon;}
+    .div6 { grid-area: 2 / 5 / 4 / 6; background-color: green;}
+  
+
+
+/** HOME STAGING **/
+.Staging{
+
+  &__stats{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  &__content{
+    padding-top:40px;
+  }
+}
+
+.button-more{
+  background-color: $vertsauge;
+  color: $coul-bg;
+  padding: 20px;
+}
+
+/** Nous Joindre **/
+#nous-joindre{
   position: relative;
 }
 
-.menu-item a{
-  display: block;
-  padding: 0.5em 1em;
-  text-transform: uppercase;
-  transition: all 0.5s;
-}
 
-.menu-item a:hover{
+.form-space{
+  background-color: $vertsauge;
   color: $coul-bg;
-}
-
-.menu-item.current-item a{
-  color: $gris;
-  border-bottom: 3px solid $gris;
+  padding: 20px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width:600px;
 }
 
 
@@ -100,14 +222,84 @@ footer{
   padding: 2rem 0;
 }
 
-footer .menu-item a{
-  text-transform: inherit;
-}
+.menu-secondary{
+    text-transform: inherit;
+    
+    &__list{
+        float: right;
+  }
 
-footer .menu-item.current-item a{
-  color: $coul-bg;
-  border-color: $coul-bg;
+    &__item{
+        text-transform: inherit;
+        display: inline-block;
+        font-size: 1.3rem;
+        padding-left:10px;
+      }
+    &__link{
+        color:$coul-bg;
+        &:hover{
+          color: $vertsauge;
+        }
+      }
+    
+  }
+
+
+
+.mediasocial{  
+
+    &__item{
+        display: inline-block;
+        list-style: none;
+
+        &--Facebook {
+          background-image: url(../images/facebook.png);
+          width: 20px;
+          height: 20px;
+          background-repeat: no-repeat;
+          text-indent: -33333px;
+          background-size: contain;
+      }
+      &--Linkedin {
+        background-image: url(../images/linkedin.png);
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        text-indent: -33333px;
+        background-size: contain;
+    }
+    &--Twitter {
+      background-image: url(../images/twitter.png);
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      text-indent: -33333px;
+      background-size: contain;
+  }
+  &--Youtube {
+    background-image: url(../images/youtube.png);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    text-indent: -33333px;
+    background-size: contain;
 }
+      }
+  }
+
+  .sourceFooter-1{
+    height: 98px;
+  }
+  
+  .sourceFooter-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+
 
 footer .logo{
   padding: 0.5em 1em;
@@ -116,7 +308,7 @@ footer .logo{
 
 footer p{
   font-size: 1.2rem;
-  color: #d283aa;
+  color: $coul-bg;
   clear: both;
   text-align: center;
 }

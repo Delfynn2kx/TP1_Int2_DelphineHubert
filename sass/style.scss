@@ -8,7 +8,7 @@ $color-header: #e5e5e5;
 
 * {box-sizing: border-box;}
 
-img{ max-width: 100%;}
+img{ max-width: 100%; object-fit: cover;}
 
 .container{
   width: 80%;
@@ -39,7 +39,6 @@ a{
 }
 
 hr{
-  width: 80%;
   border: 1px solid $vertsauge;
 }
 
@@ -167,14 +166,38 @@ section{  margin: 0 auto; }
     grid-row-gap: 10px;
     grid-auto-flow: row;
     grid-auto-rows: minmax(150px, auto);
+
+    &__1{ 
+      grid-area: 2 / 1 / 4 / 2; 
+      background-color: chocolate;
+
+      &--img1{
+      aspect-ratio: 1 / 1;
+    }
+    }
+    &__2 { grid-area: 1 / 2 / 3 / 4; background-color: blueviolet;
+      &--img2{
+        aspect-ratio: 18/9;
+      }
+    }
+    &__3 { grid-area: 2 / 4 / 3 / 5; background-color: cornflowerblue;
+      &--img3{
+        aspect-ratio: 18/9;
+      }}
+    &__4 { grid-area: 3 / 2 / 4 / 3; background-color: darkred;}
+    &__5 { grid-area: 3 / 3 / 5 / 5; background-color: darksalmon;}
+    &__6 { 
+      grid-area: 2 / 5 / 4 / 6; background-color: green;
+      &--img6{
+        aspect-ratio: 1 / 1;
+      }
+    }
+   
+
     }
     
-    .div1 { grid-area: 2 / 1 / 4 / 2; background-color: chocolate; }
-    .div2 { grid-area: 1 / 2 / 3 / 4; background-color: blueviolet;}
-    .div3 { grid-area: 2 / 4 / 3 / 5; background-color: cornflowerblue;}
-    .div4 { grid-area: 3 / 2 / 4 / 3; background-color: darkred;}
-    .div5 { grid-area: 3 / 3 / 5 / 5; background-color: darksalmon;}
-    .div6 { grid-area: 2 / 5 / 4 / 6; background-color: green;}
+    
+    
   
 
 
@@ -197,6 +220,73 @@ section{  margin: 0 auto; }
   color: $coul-bg;
   padding: 20px;
 }
+
+
+/** TÉMOIGNAGES **/
+.clientsSatisfaits{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  color:$coul-bg;
+
+  &__card{
+    padding: 20px;
+    background-color: $gris;
+    margin-right:10px;
+}
+  &__img{
+    border-radius: 50%;
+  }
+  &__title{
+    font-weight: bold;
+  }
+  &__desc{
+      
+  }
+  &__list{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    list-style: none;
+  }
+  &__item{
+    margin-right: 10px;
+
+      &--Facebook {
+        background-image: url(../images/facebook.png);
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        text-indent: -33333px;
+        background-size: contain;
+    }
+    &--Linkedin {
+      background-image: url(../images/linkedin.png);
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      text-indent: -33333px;
+      background-size: contain;
+  }
+  &--Insta {
+    background-image: url(../images/instagram.png);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    text-indent: -33333px;
+    background-size: contain;
+}
+  }
+
+
+}
+
+#card_after{
+  padding: 20px;
+  border-right: none;
+}
+
 
 /** Nous Joindre **/
 #nous-joindre{

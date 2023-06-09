@@ -7,6 +7,7 @@
 
 img {
   max-width: 100%;
+  object-fit: cover;
 }
 
 .container {
@@ -38,7 +39,6 @@ a {
 }
 
 hr {
-  width: 80%;
   border: 1px solid #a2a76c;
 }
 
@@ -157,35 +157,41 @@ section {
   grid-auto-flow: row;
   grid-auto-rows: minmax(150px, auto);
 }
-
-.div1 {
+.gallerie__1 {
   grid-area: 2/1/4/2;
   background-color: chocolate;
 }
-
-.div2 {
+.gallerie__1--img1 {
+  aspect-ratio: 1/1;
+}
+.gallerie__2 {
   grid-area: 1/2/3/4;
   background-color: blueviolet;
 }
-
-.div3 {
+.gallerie__2--img2 {
+  aspect-ratio: 18/9;
+}
+.gallerie__3 {
   grid-area: 2/4/3/5;
   background-color: cornflowerblue;
 }
-
-.div4 {
+.gallerie__3--img3 {
+  aspect-ratio: 18/9;
+}
+.gallerie__4 {
   grid-area: 3/2/4/3;
   background-color: darkred;
 }
-
-.div5 {
+.gallerie__5 {
   grid-area: 3/3/5/5;
   background-color: darksalmon;
 }
-
-.div6 {
+.gallerie__6 {
   grid-area: 2/5/4/6;
   background-color: green;
+}
+.gallerie__6--img6 {
+  aspect-ratio: 1/1;
 }
 
 /** HOME STAGING **/
@@ -203,6 +209,64 @@ section {
   background-color: #a2a76c;
   color: white;
   padding: 20px;
+}
+
+/** TÉMOIGNAGES **/
+.clientsSatisfaits {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  color: white;
+}
+.clientsSatisfaits__card {
+  padding: 20px;
+  background-color: #666570;
+  margin-right: 10px;
+}
+.clientsSatisfaits__img {
+  border-radius: 50%;
+}
+.clientsSatisfaits__title {
+  font-weight: bold;
+}
+.clientsSatisfaits__list {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  list-style: none;
+}
+.clientsSatisfaits__item {
+  margin-right: 10px;
+}
+.clientsSatisfaits__item--Facebook {
+  background-image: url(../images/facebook.png);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  text-indent: -33333px;
+  background-size: contain;
+}
+.clientsSatisfaits__item--Linkedin {
+  background-image: url(../images/linkedin.png);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  text-indent: -33333px;
+  background-size: contain;
+}
+.clientsSatisfaits__item--Insta {
+  background-image: url(../images/instagram.png);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  text-indent: -33333px;
+  background-size: contain;
+}
+
+#card_after {
+  padding: 20px;
+  border-right: none;
 }
 
 /** Nous Joindre **/
